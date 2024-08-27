@@ -25,3 +25,4 @@ my_set.add(45)
 my_set.update({69, 'two'})
 my_set.remove(2)
 print('Конечное множество:', my_set)
+
