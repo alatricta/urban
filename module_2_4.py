@@ -5,8 +5,19 @@ not_primes = []
 
 for i in range(1, len(numbers)):
     num = numbers[i]
-    
-    for j in range
+    is_prime = True
+
+    for j in range(1, i):
+        if num % numbers[j] == 0:
+            is_prime = False
+            break
+
+    if is_prime:
+        primes.append(num)
+    else:
+        not_primes.append(num)
+        
+        
 
 print(primes)
 print(not_primes)
