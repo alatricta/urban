@@ -2,7 +2,7 @@ default_sender = "university.help@gmail.com"
 
 def send_email(message: str, 
                 recipient: str, 
-                sender = default_sender):
+                *, sender = default_sender):
                 
     if '@' not in recipient or \
         '@' not in sender or \
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     send_email('blablabla', 'pupkin@gmail.ru')
     send_email('blablabla', 'pupkin@gmail.net')
     send_email('blablabla', 'pupkin@gmail.biz')
-    send_email('blablabla', 'pupkin@gmail.com', 'zabor@ograda.net')
-    send_email('blablabla', 'pupkin@gmail.com', 'zabor@ograda.biz')
-    send_email('blablabla', 'pupkin@gmail.com', 'pupkin@gmail.com')
+    send_email('blablabla', 'pupkin@gmail.com', sender='zabor@ograda.net')
+    send_email('blablabla', 'pupkin@gmail.com', sender='zabor@ograda.biz')
+    send_email('blablabla', 'pupkin@gmail.com', sender='pupkin@gmail.com')
     
