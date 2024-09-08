@@ -8,7 +8,7 @@ class House():
         
         
     def __del__(self):
-        __class__.houses_history.remove(self.name)
+        self.__class__.houses_history.remove(self.name)
     
     
     def __init__(self, name, floors, cur_floor = 1):
