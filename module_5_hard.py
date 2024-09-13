@@ -99,7 +99,7 @@ class UrTube:
                 print('Конец видео')
                 return True
         else:
-            print('Такокого видео нет')
+            print('Такого видео нет')
             return False
 
 
