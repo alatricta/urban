@@ -82,22 +82,31 @@ class UrTube:
         else:
             return 'Такого видео не найдено'
 
-
+    def _get_video(self, title: str):
+        for video in self.videos:
+            if title == video.title:
+                return video 
+        
+        return False
+                
     def watch_video(self, title: str):
         if self.current_user is None:
             print('Войдите в аккаунт, чтобы смотреть видео')
             return False
-        elif self.current_user.age < 18:
-            print('Вам нет 18 лет, пожалуйста покиньте страницу')
-            return False
         
-        for video in self.videos:
-            if title == video.title:
-                for n in range(1,video.duration+1):
-                    print(n, end=' ')
-                    #time.sleep(1)
-                print('Конец видео')
-                return True
+        video = self._get_video(title)
+        if video:
+            if video.adult_mode and \
+               self.current_user.age < 18:
+                print('Вам нет 18 лет, пожалуйста покиньте страницу')
+                return False
+            
+               
+            for n in range(1,video.duration+1):
+                print(n, end=' ')
+                time.sleep(1)
+            print('Конец видео')
+            return True
         else:
             print('Такого видео нет')
             return False
