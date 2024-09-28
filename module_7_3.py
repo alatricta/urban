@@ -23,7 +23,7 @@ class WordsFinder:
 
         res = {}
         for file in all_words:
-            index = all_words[file].index(word)
+            index = all_words[file].index(word.lower())
             if index:
                 res[file] = index + 1
 
@@ -34,7 +34,7 @@ class WordsFinder:
 
         res = {}
         for file in all_words:
-            cnt = all_words[file].count(word)
+            cnt = all_words[file].count(word.lower())
             if cnt:
                 res[file] = cnt
 
@@ -46,8 +46,8 @@ def main():
                           'Rudyard Kipling - If.txt',
                           'Mother Goose - Monday’s Child.txt')
     print(finder1.get_all_words())
-    print(finder1.find('the'))
-    print(finder1.count('the'))
+    print(finder1.find('tHe'))
+    print(finder1.count('thE'))
 
 
 if __name__ == '__main__':
