@@ -3,10 +3,12 @@ class IncorrectVinNumber(Exception):
         super().__init__()
         self.message = message
 
+
 class IncorrectCarNumbers(Exception):
     def __init__(self, message):
         super().__init__()
         self.message = message
+
 
 class IncorrectCarModels(Exception):
     def __init__(self, message):
@@ -17,9 +19,12 @@ class IncorrectCarModels(Exception):
 class Car:
     
     def __init__(self, model: str, vin: int, number: str):
-        self.__model = model if self.__is_valid_model(model) else None
-        self.__vin = vin if self.__is_valid_vin(vin) else None
-        self.__number = number if self.__is_valid_numbers(number) else None
+        self.model = model
+        self.vin = vin
+        self.number = number
+        # self.__model = model if self.__is_valid_model(model) else None
+        # self.__vin = vin if self.__is_valid_vin(vin) else None
+        # self.__number = number if self.__is_valid_numbers(number) else None
     
     @property
     def model(self):
@@ -46,31 +51,25 @@ class Car:
     @number.setter
     def number(self, number):
         if self.__is_valid_numbers(number):
-            self.___number = number
+            self.__number = number
 
-    
     def __is_valid_model(self, model):
         if not isinstance(model, str):
             raise IncorrectCarModels('Неверный тип данных модели машины')
-            
         return True
-    
+
     def __is_valid_vin(self, vin):
         if not isinstance(vin, int):
             raise IncorrectVinNumber('Некорректный тип vin номера')
-            
         if vin < 1_000_000 or vin > 9_999_999:
             raise IncorrectVinNumber('Некорректный диапазон для vin номера')
-           
         return True
-            
+
     def __is_valid_numbers(self, number):
         if not isinstance(number, str):
             raise IncorrectCarNumbers('Некорректный тип данных для номеров')
-            
         if len(number) != 6:
             raise IncorrectCarNumbers('Неверная длина номера')
-            
         return True
         
         
@@ -102,7 +101,7 @@ def main():
     else:
       print(f'{third.model} успешно создан')
       
-    first.model = 'sarancha'
+    first.model = 'Sarancha M-10'
     print(first.model)
       
       
