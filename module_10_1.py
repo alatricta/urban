@@ -1,10 +1,9 @@
-from datetime import datetime
 from time import sleep
 from datetime import datetime
 from threading import Thread
 
 def write_words(word_count:int, file_name:str):
-    with open(file_name, 'w') as f:
+    with open(file_name, 'w', encoding='utf-8') as f:
         for i in range(1, word_count+1):
             word = f'Какое то слово # {i}\n'
             f.write(word)
