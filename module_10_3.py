@@ -26,6 +26,7 @@ class Bank:
             if cash <= self.balance:
                 self.balance -= cash
                 print(f'{i+1} - Снятие: {cash}. Баланс: {self.balance}')
+                sleep(0.001)
             else:
                 print('Запрос отклонён, недостаточно средств')
                 self.lock.acquire()
