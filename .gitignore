@@ -2,3 +2,6 @@
 .idea
 .*
 /example*.txt
+__pycache__/
+module_*_files/
+
