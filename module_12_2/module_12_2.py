@@ -1,6 +1,11 @@
 from unittest import TestCase, main
-from runner_and_tournament import Runner, Tournament
-from pprint import pprint
+
+# Пока только так решил вопрос выполнения модуля 12_3
+# (из-за того что разложил по папкам, по-ходу и возникла такая ситуация)
+if __name__ == "__main__":
+    from runner_and_tournament import Runner, Tournament
+else:
+    from .runner_and_tournament import Runner, Tournament
 
 
 class RunnerTest(TestCase):
@@ -87,4 +92,4 @@ class TournamentTest(TestCase):
 
 
 if __name__ == "__main__":
-    main()
+    main(verbosity=2)

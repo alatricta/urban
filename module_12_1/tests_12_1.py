@@ -1,7 +1,14 @@
-from unittest import TestCase, main
-from runner import Runner
+from unittest import TestCase, main, skipIf
+
+# Пока только так решил вопрос выполнения модуля 12_3
+# (из-за того что разложил по папкам, по-ходу и возникла такая ситуация)
+if __name__ == "__main__":
+    from runner import Runner
+else:
+    from .runner import Runner
 
 
+@skipIf(__name__ != "__main__", "Добавлено для выполнения модуля 12 3")
 class RunnerTest(TestCase):
 
     def test_walk(self):
@@ -26,4 +33,4 @@ class RunnerTest(TestCase):
 
 
 if __name__ == "__main__":
-    main()
+    main(verbosity=2)
