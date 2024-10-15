@@ -15,7 +15,7 @@ async def start_strongman(name, power):
     
 
 def print_winners():
-    print('='*15)
+    print('<>''=<>'*10)
     print('Соревнование завершилось! Первые места:')
 
     for n in range(3):
