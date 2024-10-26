@@ -17,12 +17,12 @@ with sq.connect('not_telegram.db') as connection:
     count = 10
     for i in range(1, count+1):
         cursor.execute('''
-        INSERT INTO users (id, username, email, age, balance) VALUES (?,?,?,?,?)''',
-                      (i, 
-                       f'User{i}',
-                       f'user{i}@example.ru',
-                       f'{i*10}',
-                       1000))
+        INSERT INTO users (id, username, email, age, balance) VALUES (?,?,?,?,?)''', (
+                            i,
+                            f'User{i}',
+                            f'user{i}@example.ru',
+                            f'{i*10}',
+                            1000))
 
     for i in range(1, count+1, 2):
         cursor.execute('UPDATE users SET balance=? WHERE id=?', (500, i))
