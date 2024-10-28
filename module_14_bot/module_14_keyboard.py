@@ -6,15 +6,9 @@ from aiogram.types import (
     KeyboardButton,
 )
 
-# main_menu_kb = InlineKeyboardMarkup(inline_keyboard=[
-#     [InlineKeyboardButton(text='Купить', callback_data='purchase')],
-#     [InlineKeyboardButton(text='Рассчитать норму калорий', callback_data='calories')],
-#     [InlineKeyboardButton(text='Формулы расчёта', callback_data='formulas')]
-#     ]
-# )
 main_menu_kb = ReplyKeyboardMarkup(keyboard=[
     [KeyboardButton(text='Расчитать'), KeyboardButton(text='Информация')],
-    [KeyboardButton(text='Купить')]
+    [KeyboardButton(text='Купить'), KeyboardButton(text='Регистрация')]
     ], resize_keyboard=True
 )
 
